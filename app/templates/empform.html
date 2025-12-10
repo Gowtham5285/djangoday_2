@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 450px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 18px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+        }
+
+        th {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        tr:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="empForm">
+        <h2 style="text-align:center; margin-bottom: 20px;">Add Employee</h2>
+
+        <input type="text" id="empName" placeholder="Enter employee name" required>
+        <input type="email" id="empEmail" placeholder="Enter employee email" required>
+        <input type="text" id="empSal" placeholder="Enter employee salary" required>
+
+        <button id="addEmpBtn">Add Employee</button>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody id="empTableBody"></tbody>
+        </table>
+    </form>
+
+    <script src="{% static 'empform.js' %}"></script>
+</body>
+
+</html>
